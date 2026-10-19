@@ -1,0 +1,74 @@
+/* Animação suave de rotação do ícone no cabeçalho */
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Modo Mini Player Ultra-Compacto */
+#playerWrapper.is-mini {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 220px;
+  z-index: 999;
+  border-color: #2563eb;
+  background-color: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.8);
+  padding: 0.5rem !important;
+  animation: miniPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes miniPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Ocultar elementos secundários no Mini Player Compacto */
+#playerWrapper.is-mini #photoControls,
+#playerWrapper.is-mini #playerVolumeBar,
+#playerWrapper.is-mini #playerControls,
+#playerWrapper.is-mini #playerTopBar #currentTitle {
+  display: none !important;
+}
+
+#playerWrapper.is-mini #displayArea {
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+}
+
+/* Ajustes de Tela Cheia 100% Imersiva */
+#displayArea:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: #000 !important;
+}
+
+#displayArea:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: #000 !important;
+}
+
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.6);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.9);
+}
